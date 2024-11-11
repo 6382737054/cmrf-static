@@ -6,16 +6,76 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
 
+  // Modified menuItems to handle external login link differently
   const menuItems = [
-    { to: '/', label: 'Home' },
-    { to: '/about', label: 'About' },
-    { to: '/services', label: 'Documents' },
-    { to: '/contact', label: 'Contact' },
-    { to: '/login', label: 'Login' }
+    { to: '/', label: 'Home', isExternal: false },
+    { to: '/about', label: 'About', isExternal: false },
+    { to: '/services', label: 'Documents', isExternal: false },
+    { to: '/contact', label: 'Contact', isExternal: false },
+    { to: 'https://cmrf.klabsindia.com/', label: 'Login', isExternal: true }
   ];
 
   const isActive = (path) => {
     return location.pathname === path;
+  };
+
+  // Helper component to render either Link or anchor based on isExternal
+  const NavLink = ({ item }) => {
+    if (item.isExternal) {
+      return (
+        <a
+          href={item.to}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`text-lg font-medium transition-colors duration-200 relative group text-gray-700 hover:text-teal-600`}
+        >
+          {item.label}
+          <span className="absolute bottom-0 left-0 w-full h-0.5 bg-teal-600 transform transition-transform duration-200 scale-x-0 group-hover:scale-x-100" />
+        </a>
+      );
+    }
+
+    return (
+      <Link
+        to={item.to}
+        className={`text-lg font-medium transition-colors duration-200 relative group
+          ${isActive(item.to) ? 'text-teal-600' : 'text-gray-700 hover:text-teal-600'}`}
+      >
+        {item.label}
+        <span 
+          className={`absolute bottom-0 left-0 w-full h-0.5 bg-teal-600 transform transition-transform duration-200
+            ${isActive(item.to) ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`} 
+        />
+      </Link>
+    );
+  };
+
+  // Helper component for mobile menu items
+  const MobileNavLink = ({ item }) => {
+    if (item.isExternal) {
+      return (
+        <a
+          href={item.to}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block px-4 py-3 rounded-md text-lg font-medium transition-colors duration-200 text-gray-700 hover:text-teal-600 hover:bg-gray-50"
+          onClick={() => setIsMenuOpen(false)}
+        >
+          {item.label}
+        </a>
+      );
+    }
+
+    return (
+      <Link
+        to={item.to}
+        className={`block px-4 py-3 rounded-md text-lg font-medium transition-colors duration-200
+          ${isActive(item.to) ? 'text-teal-600 bg-gray-50' : 'text-gray-700 hover:text-teal-600 hover:bg-gray-50'}`}
+        onClick={() => setIsMenuOpen(false)}
+      >
+        {item.label}
+      </Link>
+    );
   };
 
   return (
@@ -50,18 +110,7 @@ const Header = () => {
           {/* Right side - Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             {menuItems.map((item) => (
-              <Link
-                key={item.to}
-                to={item.to}
-                className={`text-lg font-medium transition-colors duration-200 relative group
-                  ${isActive(item.to) ? 'text-teal-600' : 'text-gray-700 hover:text-teal-600'}`}
-              >
-                {item.label}
-                <span 
-                  className={`absolute bottom-0 left-0 w-full h-0.5 bg-teal-600 transform transition-transform duration-200
-                    ${isActive(item.to) ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`} 
-                />
-              </Link>
+              <NavLink key={item.to} item={item} />
             ))}
           </nav>
 
@@ -89,15 +138,7 @@ const Header = () => {
       >
         <div className="px-4 pt-3 pb-4 space-y-2 bg-white shadow-lg">
           {menuItems.map((item) => (
-            <Link
-              key={item.to}
-              to={item.to}
-              className={`block px-4 py-3 rounded-md text-lg font-medium transition-colors duration-200
-                ${isActive(item.to) ? 'text-teal-600 bg-gray-50' : 'text-gray-700 hover:text-teal-600 hover:bg-gray-50'}`}
-              onClick={() => setIsMenuOpen(false)}
-            >
-              {item.label}
-            </Link>
+            <MobileNavLink key={item.to} item={item} />
           ))}
         </div>
       </div>

@@ -50,11 +50,11 @@ const Footer = () => {
           {/* Logo and Description */}
           <div className="space-y-4">
             <div className="flex items-center space-x-4">
-              <img 
-                src="images/tnlogo.png" 
+              {/* <img 
+                // src="images/tnlogo.png" 
                 alt="CMRF Logo" 
                 className="h-12 w-auto"
-              />
+              /> */}
               <h3 className="text-xl font-bold text-white">CMRF</h3>
             </div>
             <p className="text-sm text-gray-400 leading-relaxed">
