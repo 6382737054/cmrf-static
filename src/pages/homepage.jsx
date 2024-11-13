@@ -4,19 +4,19 @@ import { ArrowRight, ArrowUpRight } from 'lucide-react';
 
 const slides = [
   {
-    url: 'images/slide1.png',
-    title: 'Transforming Lives',
-    subtitle: 'Building a stronger future for our communities'
+    url: 'images/slide3.png',
+    title: '',
+    subtitle: ''
   },
   {
     url: 'images/slide2.png',
-    title: 'Healthcare Initiatives',
-    subtitle: 'Supporting quality healthcare for all'
+    title: '',
+    subtitle: ''
   },
   {
-    url: 'images/slide3.png',
-    title: 'Educational Excellence',
-    subtitle: 'Empowering through education'
+    url: 'images/slide1.png',
+    title: '',
+    subtitle: ''
   }
 ];
 
@@ -89,59 +89,25 @@ const HeroSection = () => {
   );
 };
 
-const NewsSection = () => {
-  const news = [
-    {
-      date: '2024-03-15',
-      title: 'New Infrastructure Development Projects Announced',
-      excerpt: 'Major initiatives to enhance public infrastructure across multiple districts.',
-      image: 'images/tes1.png'
-    },
-    {
-      date: '2024-03-10',
-      title: 'Healthcare Modernization Program Launched',
-      excerpt: 'State-of-the-art medical equipment deployed to district hospitals.',
-     image: 'images/tes1.png'
-    },
-    {
-      date: '2024-03-05',
-      title: 'Education Reform Policy Implementation',
-      excerpt: 'Comprehensive changes to improve educational standards.',
-    image: 'images/tes1.png'
-    }
-  ];
-
+const VideoAndImageSection = () => {
   return (
+
+   
     <section className="py-20 bg-white">
-      <div className="container mx-auto px-6">
-        <h2 className="text-3xl font-bold text-gray-900 mb-12">Latest Updates</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {news.map((item, index) => (
-            <motion.article
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
-            >
-              <div className="relative h-48 overflow-hidden">
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  className="w-full h-full object-cover transform hover:scale-110 transition-transform duration-500"
-                />
-              </div>
-              <div className="p-6">
-                <time className="text-sm text-gray-500">{item.date}</time>
-                <h3 className="text-xl font-semibold mt-2 mb-3">{item.title}</h3>
-                <p className="text-gray-600 mb-4">{item.excerpt}</p>
-                <button className="text-blue-600 font-medium inline-flex items-center hover:gap-2 transition-all duration-300">
-                  Read more <ArrowRight className="w-4 h-4 ml-1" />
-                </button>
-              </div>
-            </motion.article>
-          ))}
+      
+      <div className="container mx-auto px-6 flex flex-col md:flex-row gap-12">
+        <div className="flex-1">
+          <video
+            src="/videos/video1.mp4"
+            controls
+            className="w-full h-[400px] rounded-lg"
+          ></video>
+        </div>
+        <div className="flex-1 grid grid-cols-2 gap-4">
+          <img src="images/news1.png" alt="News Image 1" className="rounded-lg" />
+          <img src="images/slide1.png" alt="News Image 2" className="rounded-lg" />
+          <img src="images/slide2.png" alt="News Image 3" className="rounded-lg" />
+          <img src="images/slide3.png" alt="News Image 4" className="rounded-lg" />
         </div>
       </div>
     </section>
@@ -151,27 +117,27 @@ const NewsSection = () => {
 const InitiativesSection = () => {
   const initiatives = [
     {
-      title: 'Infrastructure Development',
-      description: 'Modern infrastructure projects to enhance public facilities',
-      stats: '500+ Projects',
+      title: 'Empowering Local Research Talent',
+      description: 'The CMRF provides funding to eligible postgraduates from Tamil Nadu to pursue full-time Ph.D. programs. This initiative encourages research careers among local scholars by supporting their academic journey financially.',
+
       icon: '🏗️'
     },
     {
-      title: 'Healthcare',
-      description: 'Advanced medical facilities and healthcare initiatives',
-      stats: '200+ Centers',
+      title: 'Focus on State-Specific Research Projects',
+      description: 'CMRF scholars are encouraged to undertake research on issues relevant to Tamil Nadu, from public health to environmental sustainability, aligning academic efforts with state needs to produce practical outcomes that benefit the community.',
+
       icon: '🏥'
     },
     {
-      title: 'Education',
-      description: 'Quality education and skill development programs',
-      stats: '1000+ Schools',
+      title: 'Building Institutional Research Capacity',
+      description: 'By funding research positions in state institutions, the CMRF fosters a stronger research culture in Tamil Nadu’s academic landscape, promoting knowledge sharing and innovation across disciplines like engineering, social sciences, and public policy.',
+  
       icon: '🎓'
     },
     {
-      title: 'Technology',
-      description: 'Digital transformation and smart city initiatives',
-      stats: '50+ Programs',
+      title: 'Skill Development and Mentorship for Fellows',
+      description: 'The fellowship offers structured mentorship, enabling fellows to work closely with experienced academics and researchers, which enhances their research skills and prepares them for impactful roles in academia and beyond.',
+
       icon: '💻'
     }
   ];
@@ -204,61 +170,12 @@ const InitiativesSection = () => {
   );
 };
 
-const AchievementsSection = () => {
-    const achievements = [
-      {
-        title: 'Projects Completed',
-        value: '2500+',
-        description: 'Successfully executed infrastructure and development projects'
-      },
-      {
-        title: 'Districts Covered',
-        value: '38',
-        description: 'Comprehensive coverage across all districts'
-      },
-      {
-        title: 'Lives Impacted',
-        value: '10M+',
-        description: "Direct positive impact on citizens' lives"  // Fixed string with double quotes
-      },
-      {
-        title: 'Investment Made',
-        value: '₹5000Cr',
-        description: 'Total investment in various development initiatives'
-      }
-    ];
-  
-    return (
-      <section className="py-20 bg-blue-900 text-white">
-        <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold mb-16 text-center">Our Impact</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-            {achievements.map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="text-center"
-              >
-                <div className="text-4xl font-bold mb-3">{item.value}</div>
-                <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
-                <p className="text-blue-200">{item.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-    );
-  };
 const HomePage = () => {
   return (
     <div className="min-h-screen">
       <HeroSection />
-      <NewsSection />
+      <VideoAndImageSection />
       <InitiativesSection />
-      <AchievementsSection />
     </div>
   );
 };

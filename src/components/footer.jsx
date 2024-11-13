@@ -5,23 +5,17 @@ import { Link } from 'react-router-dom';
 const Footer = () => {
   const quickLinks = [
     { name: 'Home', path: '/' },
-    { name: 'About', path: '/about' },
-    { name: 'Services', path: '/services' },
-    { name: 'Contact', path: '/contact' }
-  ];
-
-  const serviceLinks = [
-    { name: 'Infrastructure', path: '/services/infrastructure' },
-    { name: 'Healthcare', path: '/services/healthcare' },
-    { name: 'Education', path: '/services/education' },
-    { name: 'Technology', path: '/services/technology' }
+    { name: 'About Us', path: '/about' },
+    { name: 'Documents', path: '/services' },
+    { name: 'Contact', path: '/contact' },
+    { name: 'Login', path: 'https://cmrf.klabsindia.com/#/login' }
   ];
 
   const contactInfo = [
     { 
       icon: MapPin, 
-      info: 'Government Complex, Chennai - 600001',
-      link: 'https://maps.google.com'
+      info: 'DIRECTORATE OF COLLEGIATE EDUCATION 577, Anna Salai, Saidapet, Chennai, Tamil Nadu 600015',
+      link: 'https://maps.google.com/maps?q=DIRECTORATE+OF+COLLEGIATE+EDUCATION+577%2C+Anna+Salai%2C+Saidapet%2C+Chennai%2C+Tamil+Nadu+600015'
     },
     { 
       icon: Phone, 
@@ -46,7 +40,7 @@ const Footer = () => {
     <footer className="bg-gray-900 text-gray-300">
       {/* Main Footer Content */}
       <div className="container mx-auto px-6 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
           {/* Logo and Description */}
           <div className="space-y-4">
             <div className="flex items-center space-x-4">
@@ -58,9 +52,7 @@ const Footer = () => {
               <h3 className="text-xl font-bold text-white">CMRF</h3>
             </div>
             <p className="text-sm text-gray-400 leading-relaxed">
-              The Chief Minister's Relief Fund works towards providing immediate 
-              support and implementing various welfare schemes for the betterment 
-              of our citizens.
+            The Directorate of Collegiate Education was carved out of the erstwhile Directorate of Public Instruction in the year 1965 with a view to administer exclusively the Collegiate Education. Tamil Nadu enjoys the privilege of being one of the most developed states in the Country in the field of Higher Education. 27 Universities are functioning in Tamilnadu and of these 12 Universities are getting their Block Grants from the Government of Tamilnadu through the Directorate of Collegiate Education.
             </p>
             {/* Social Links */}
             <div className="flex space-x-4 pt-4">
@@ -88,25 +80,8 @@ const Footer = () => {
                 <li key={link.name}>
                   <Link
                     to={link.path}
-                    className="text-gray-400 hover:text-white transition-colors duration-300 flex items-center gap-2 group"
-                  >
-                    <span className="h-1 w-0 bg-white group-hover:w-2 transition-all duration-300"></span>
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Services */}
-          <div>
-            <h4 className="text-lg font-semibold text-white mb-6">Our Services</h4>
-            <ul className="space-y-3">
-              {serviceLinks.map((link) => (
-                <li key={link.name}>
-                  <Link
-                    to={link.path}
-                    className="text-gray-400 hover:text-white transition-colors duration-300 flex items-center gap-2 group"
+                    className={`text-gray-400 hover:text-white transition-colors duration-300 flex items-center gap-2 group ${link.name === 'Login' ? 'cursor-pointer' : ''}`}
+                    {...link.name === 'Login' ? { href: link.path, target: '_blank', rel: 'noopener noreferrer' } : { to: link.path }}
                   >
                     <span className="h-1 w-0 bg-white group-hover:w-2 transition-all duration-300"></span>
                     {link.name}

@@ -43,24 +43,24 @@ const DocumentationPage = () => {
   // Document data
   const documents = [
     {
-      title: "Getting Started Guide",
-      description: "Complete guide for beginners to get started with our platform",
+      title: "CMRF Ammendment",
+      description: "Collegiate Education",
     
       fileType: "PDF",
       downloadUrl: "/pdf/pdf1.pdf",
       icon: <Book className="w-8 h-8 text-blue-600" />
     },
     {
-      title: "API Documentation",
-      description: "Technical documentation for API integration and endpoints",
+      title: "Higher Education G1",
+      description: "Higher Education (G1) Department",
       
       fileType: "PDF",
       downloadUrl: "/pdf/pdf2.pdf",
       icon: <Code className="w-8 h-8 text-blue-600" />
     },
     {
-      title: "Best Practices",
-      description: "Learn about recommended practices and optimization techniques",
+      title: "CMRF-GO",
+      description: "Chief Minister Research Fellowship",
 
       fileType: "PDF",
       downloadUrl: "/pdf/pdf3.pdf",
@@ -68,27 +68,7 @@ const DocumentationPage = () => {
     }
   ];
 
-  // Category data
-  const categories = [
-    { 
-      title: 'Documentation', 
-      count: '15+ Guides', 
-      icon: <FileText className="w-6 h-6" />,
-      description: 'Comprehensive guides and references'
-    },
-    { 
-      title: 'Tutorials', 
-      count: '20+ Videos', 
-      icon: <PlayCircle className="w-6 h-6" />,
-      description: 'Step-by-step video tutorials'
-    },
-    { 
-      title: 'Resources', 
-      count: '30+ Templates', 
-      icon: <Book className="w-6 h-6" />,
-      description: 'Templates and downloadable resources'
-    }
-  ];
+ 
 
   // Download handler
   const handleDownload = async (url, title) => {
@@ -141,10 +121,10 @@ const DocumentationPage = () => {
      
 
       {/* Hero Section */}
-      <div className="bg-gradient-to-r from-blue-600 to-blue-700 text-white pt-36 pb-20">
+      <div className="bg-gradient-to-r from-blue-600 to-blue-900 text-white pt-36 pb-20">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <div className="max-w-3xl mx-auto">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Documentation Center</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">Government Orders And Circulars</h1>
             <p className="text-xl opacity-90 mb-8">
               Everything you need to know about our platform, all in one place.
             </p>
@@ -155,28 +135,7 @@ const DocumentationPage = () => {
 
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 py-16">
-        {/* Categories Section */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-          {categories.map((category, index) => (
-            <Card 
-              key={index} 
-              className="transform transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
-            >
-              <CardContent>
-                <div className="flex items-center space-x-4">
-                  <div className="p-3 bg-blue-50 rounded-lg">
-                    {category.icon}
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold text-gray-800">{category.title}</h3>
-                    <p className="text-gray-600">{category.count}</p>
-                    <p className="text-sm text-gray-500 mt-1">{category.description}</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+      
 
         {/* Downloads Section */}
         <div className="mb-16">
@@ -222,28 +181,7 @@ const DocumentationPage = () => {
           </div>
         </div>
 
-        {/* Support Section */}
-        <Card className="bg-gradient-to-r from-blue-50 to-blue-100">
-          <div className="p-8 md:p-12 flex flex-col md:flex-row items-center justify-between">
-            <div className="text-center md:text-left mb-6 md:mb-0">
-              <h2 className="text-2xl font-bold mb-4">Need Additional Help?</h2>
-              <p className="text-gray-600 max-w-xl">
-                Our support team is available 24/7 to assist you with any questions or concerns.
-                We typically respond within 2 hours.
-              </p>
-            </div>
-            <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-              <button className="flex items-center justify-center px-6 py-3 bg-white text-blue-600 rounded-md hover:bg-blue-50 transition-colors border border-blue-200">
-                <Mail className="mr-2" size={20} />
-                Email Support
-              </button>
-              <button className="flex items-center justify-center px-6 py-3 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors">
-                Live Chat
-                <ArrowRight className="ml-2" size={20} />
-              </button>
-            </div>
-          </div>
-        </Card>
+   
       </div>
 
       {/* Download Status Toast */}
