@@ -150,7 +150,7 @@ const DocumentationPage = () => {
               >
                 <CardHeader>
                   <div className="flex items-center space-x-4 mb-4">
-                    {doc.icon}
+              
                     <h3 className="text-xl font-semibold">{doc.title}</h3>
                   </div>
                   <p className="text-gray-600">{doc.description}</p>
