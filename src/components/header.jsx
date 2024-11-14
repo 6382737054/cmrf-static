@@ -10,7 +10,7 @@ const Header = () => {
   const menuItems = [
     { to: '/', label: 'Home', isExternal: false },
     { to: '/about', label: 'About', isExternal: false },
-    { to: '/services', label: 'Documents', isExternal: false },
+    { to: '/services', label: 'Downloads', isExternal: false },
     { to: '/contact', label: 'Contact', isExternal: false },
     { to: 'https://cmrf.klabsindia.com/', label: 'Login', isExternal: true }
   ];
@@ -86,18 +86,26 @@ const Header = () => {
           <div className="flex items-center space-x-4 flex-shrink-0">
             {/* Logo Container */}
             <div className="flex items-center space-x-4">
+            <img
+                src="images/logo3.png"
+                alt="Secondary Logo"
+                className="h-16 w-auto object-contain"
+              />
               <Link to="/">
+              
                 <img
                   src="images/logo1.png"
                   alt="Primary Logo"
                   className="h-16 w-auto object-contain"
                 />
               </Link>
+            
               <img
                 src="images/logo2.png"
                 alt="Secondary Logo"
                 className="h-16 w-auto object-contain"
               />
+             
               <h1 className="hidden sm:block text-3xl font-bold text-gray-800 pl-4 border-l-2 border-gray-300">
                 CMRF
               </h1>

@@ -43,24 +43,23 @@ const DocumentationPage = () => {
   // Document data
   const documents = [
     {
-      title: "CMRF Ammendment",
-      description: "Collegiate Education",
-    
+      title: "G.O Number 53, Higher Education",
+     
       fileType: "PDF",
       downloadUrl: "/pdf/pdf1.pdf",
       icon: <Book className="w-8 h-8 text-blue-600" />
     },
     {
-      title: "Higher Education G1",
-      description: "Higher Education (G1) Department",
+      title: "GO MS NO 56",
+     
       
       fileType: "PDF",
       downloadUrl: "/pdf/pdf2.pdf",
       icon: <Code className="w-8 h-8 text-blue-600" />
     },
     {
-      title: "CMRF-GO",
-      description: "Chief Minister Research Fellowship",
+      title: "GO MS NO 53",
+     
 
       fileType: "PDF",
       downloadUrl: "/pdf/pdf3.pdf",
@@ -139,7 +138,7 @@ const DocumentationPage = () => {
 
         {/* Downloads Section */}
         <div className="mb-16">
-          <h2 className="text-3xl font-bold mb-8 text-center">Popular Downloads</h2>
+        
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {documents.map((doc, index) => (
               <Card 
