@@ -6,7 +6,7 @@ const Footer = () => {
   const quickLinks = [
     { name: 'Home', path: '/' },
     { name: 'About Us', path: '/about' },
-    { name: 'Documents', path: '/services' },
+    { name: 'Downloads', path: '/services' },
     { name: 'Contact', path: '/contact' },
     { name: 'Login', path: 'https://cmrf.klabsindia.com/#/login' }
   ];

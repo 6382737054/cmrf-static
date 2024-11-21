@@ -80,7 +80,7 @@ const Header = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-28">
           {/* Logos and Text */}
-          <div className="flex items-center space-x-4 overflow-x-auto w-full pr-16"> {/* Added padding for hamburger */}
+          <div className="flex items-center space-x-4 overflow-x-auto w-full pr-16">
             <div className="flex items-center flex-nowrap min-w-0">
               <img
                 src="images/logo3.png"
@@ -97,13 +97,13 @@ const Header = () => {
                   <img
                     src="images/logo1.png"
                     alt="Primary Logo"
-                    className="h-[4.4rem] w-auto object-contain flex-shrink-0"
+                    className="h-[5.5rem] w-auto object-contain flex-shrink-0" /* Increased size for second logo */
                   />
                 </Link>
                 <img
                   src="images/logo2.png"
                   alt="Secondary Logo"
-                  className="h-[4.4rem] w-auto object-contain flex-shrink-0"
+                  className="h-[2.2rem] w-auto object-contain flex-shrink-0" /* Reduced to 50% */
                 />
               </div>
             </div>

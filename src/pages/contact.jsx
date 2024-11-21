@@ -6,7 +6,7 @@ const ContactPage = () => {
       {/* Hero Section */}
       <div className="bg-gradient-to-r from-blue-600 to-blue-900 text-white py-20">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <h1 className="text-5xl font-bold mb-6">Contact</h1>
+          <h1 className="text-5xl font-bold mb-6">Contact Us</h1>
          
         </div>
       </div>
