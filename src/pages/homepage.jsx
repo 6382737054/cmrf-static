@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, ArrowUpRight } from 'lucide-react';
-
+import EmergingTrendsSection from './EmergingTrends';
 const slides = [
   {
     url: 'images/slide3.png',
@@ -175,6 +175,7 @@ const HomePage = () => {
     <div className="min-h-screen">
       <HeroSection />
       <VideoAndImageSection />
+      <EmergingTrendsSection/>
       <InitiativesSection />
     </div>
   );
