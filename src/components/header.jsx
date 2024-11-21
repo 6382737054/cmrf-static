@@ -103,7 +103,7 @@ const Header = () => {
                 <img
                   src="images/logo2.png"
                   alt="Secondary Logo"
-                  className="h-[2.2rem] w-auto object-contain flex-shrink-0" /* Reduced to 50% */
+                  className="h-[3.2rem] w-auto object-contain flex-shrink-0" /* Reduced to 50% */
                 />
               </div>
             </div>
