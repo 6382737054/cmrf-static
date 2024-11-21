@@ -6,7 +6,6 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
 
-  // Modified menuItems to handle external login link differently
   const menuItems = [
     { to: '/', label: 'Home', isExternal: false },
     { to: '/about', label: 'About', isExternal: false },
@@ -19,7 +18,6 @@ const Header = () => {
     return location.pathname === path;
   };
 
-  // Helper component to render either Link or anchor based on isExternal
   const NavLink = ({ item }) => {
     if (item.isExternal) {
       return (
@@ -27,7 +25,7 @@ const Header = () => {
           href={item.to}
           target="_blank"
           rel="noopener noreferrer"
-          className={`text-lg font-medium transition-colors duration-200 relative group text-gray-700 hover:text-teal-600`}
+          className="text-lg font-medium transition-colors duration-200 relative group text-gray-700 hover:text-teal-600"
         >
           {item.label}
           <span className="absolute bottom-0 left-0 w-full h-0.5 bg-teal-600 transform transition-transform duration-200 scale-x-0 group-hover:scale-x-100" />
@@ -50,7 +48,6 @@ const Header = () => {
     );
   };
 
-  // Helper component for mobile menu items
   const MobileNavLink = ({ item }) => {
     if (item.isExternal) {
       return (
@@ -81,49 +78,46 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 w-full bg-white shadow-lg z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-24">
-          {/* Left side - Logos and Text */}
-          <div className="flex items-center space-x-4 flex-shrink-0">
-            {/* Logo Container */}
-            <div className="flex items-center space-x-4">
-            <img
+        <div className="flex items-center justify-between h-28">
+          {/* Logos and Text */}
+          <div className="flex items-center space-x-4 overflow-x-auto w-full pr-16"> {/* Added padding for hamburger */}
+            <div className="flex items-center flex-nowrap min-w-0">
+              <img
                 src="images/logo3.png"
                 alt="Secondary Logo"
-                className="h-16 w-auto object-contain"
+                className="h-[4.4rem] w-auto object-contain flex-shrink-0"
               />
-              <Link to="/">
-              
+              <div className="flex items-center pl-4 border-l-2 border-gray-300">
+                <h1 className="text-3xl font-bold text-gray-800 whitespace-nowrap">
+                  CMRF
+                </h1>
+              </div>
+              <div className="flex items-center space-x-4 pl-4">
+                <Link to="/">
+                  <img
+                    src="images/logo1.png"
+                    alt="Primary Logo"
+                    className="h-[4.4rem] w-auto object-contain flex-shrink-0"
+                  />
+                </Link>
                 <img
-                  src="images/logo1.png"
-                  alt="Primary Logo"
-                  className="h-16 w-auto object-contain"
+                  src="images/logo2.png"
+                  alt="Secondary Logo"
+                  className="h-[4.4rem] w-auto object-contain flex-shrink-0"
                 />
-              </Link>
-            
-              <img
-                src="images/logo2.png"
-                alt="Secondary Logo"
-                className="h-16 w-auto object-contain"
-              />
-             
-              <h1 className="hidden sm:block text-3xl font-bold text-gray-800 pl-4 border-l-2 border-gray-300">
-                CMRF
-              </h1>
+              </div>
             </div>
-            <h1 className="sm:hidden text-2xl font-bold text-gray-800">
-              CMRF
-            </h1>
           </div>
 
-          {/* Right side - Navigation */}
+          {/* Navigation - Desktop */}
           <nav className="hidden md:flex items-center space-x-8">
             {menuItems.map((item) => (
               <NavLink key={item.to} item={item} />
             ))}
           </nav>
 
-          {/* Mobile menu button */}
-          <div className="md:hidden flex items-center">
+          {/* Navigation - Mobile */}
+          <div className="md:hidden flex items-center absolute right-4 top-1/2 -translate-y-1/2">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-teal-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-teal-500"
@@ -139,12 +133,18 @@ const Header = () => {
         </div>
       </div>
 
+      {/* Mobile menu overlay */}
+      {isMenuOpen && (
+        <div className="md:hidden fixed inset-0 bg-black bg-opacity-50 z-40" onClick={() => setIsMenuOpen(false)} />
+      )}
+
       {/* Mobile menu */}
       <div 
-        className={`md:hidden ${isMenuOpen ? 'block' : 'hidden'}`}
-        style={{ maxHeight: 'calc(100vh - 6rem)', overflowY: 'auto' }}
+        className={`md:hidden fixed right-0 top-28 w-64 bg-white shadow-lg z-50 transform transition-transform duration-300 ease-in-out ${
+          isMenuOpen ? 'translate-x-0' : 'translate-x-full'
+        }`}
       >
-        <div className="px-4 pt-3 pb-4 space-y-2 bg-white shadow-lg">
+        <div className="py-3">
           {menuItems.map((item) => (
             <MobileNavLink key={item.to} item={item} />
           ))}
