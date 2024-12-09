@@ -19,13 +19,18 @@ const Footer = () => {
     },
     { 
       icon: Phone, 
-      info: '044-2345-6789',
-      link: 'tel:044-2345-6789'
+      info: '044-24343106'
+ 
+    },
+    { 
+      icon: Phone, 
+      info: '044-24343109'
+ 
     },
     { 
       icon: Mail, 
-      info: 'info@cmrf.gov.in',
-      link: 'mailto:info@cmrf.gov.in'
+      info: 'cmrfdce2023@gmail.com',
+      link: 'mailto:cmrfdce2023@gmail.com'
     }
   ];
 
@@ -94,6 +99,8 @@ const Footer = () => {
           {/* Contact Information */}
           <div>
             <h4 className="text-lg font-semibold text-white mb-6">Contact Us</h4>
+            <h4 className="text-lg font-semibold text-white mb-6 font-semibold border-b-2 border-white inline-block pb-2">CMRF UNIT</h4>
+        
             <ul className="space-y-4">
               {contactInfo.map((item, index) => {
                 const Icon = item.icon;

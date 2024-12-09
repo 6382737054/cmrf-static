@@ -46,7 +46,7 @@ const DocumentationPage = () => {
       title: "G.O. (Ms). No.53 Higher Education (G1) Department Dated 27.02.2023",
      
       fileType: "PDF",
-      downloadUrl: "/pdf/pdf1.pdf",
+      downloadUrl: "/pdf/pdf3.pdf",
       icon: <Book className="w-8 h-8 text-blue-600" />
     },
     {
@@ -62,7 +62,7 @@ const DocumentationPage = () => {
      
 
       fileType: "PDF",
-      downloadUrl: "/pdf/pdf3.pdf",
+      downloadUrl: "/pdf/pdf1.pdf",
       icon: <PlayCircle className="w-8 h-8 text-blue-600" />
     },
     {

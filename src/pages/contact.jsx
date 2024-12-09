@@ -7,6 +7,7 @@ const ContactPage = () => {
       <div className="bg-gradient-to-r from-blue-600 to-blue-900 text-white py-20">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h1 className="text-5xl font-bold mb-6">Contact Us</h1>
+          <h2 className="text-2xl font-semibold border-b-2 border-white inline-block pb-2">CMRF Unit</h2>
         </div>
       </div>
 
