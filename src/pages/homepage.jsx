@@ -13,11 +13,7 @@ const slides = [
     title: '',
     subtitle: ''
   },
-  {
-    url: 'images/slide1.png',
-    title: '',
-    subtitle: ''
-  },
+
   {
     url: 'images/slide4.png',
     title: '',
