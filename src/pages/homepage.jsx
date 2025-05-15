@@ -115,10 +115,10 @@ const VideoAndImageSection = () => {
           ></video>
         </div>
         <div className="flex-1 grid grid-cols-2 gap-4">
-          <img src="images/news1.png" alt="News Image 1" className="rounded-lg" />
+          <img src="images/slide5.png" alt="News Image 1" className="rounded-lg" />
           <img src="images/slide1.png" alt="News Image 2" className="rounded-lg" />
           <img src="images/slide2.png" alt="News Image 3" className="rounded-lg" />
-          <img src="images/slide3.png" alt="News Image 4" className="rounded-lg" />
+          <img src="images/slide6.png" alt="News Image 4" className="rounded-lg" />
         </div>
       </div>
     </section>
